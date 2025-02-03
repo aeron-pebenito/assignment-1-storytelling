@@ -1,0 +1,45 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1,
+.title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    background-color: #1D428A;
+    padding: 20px; 
+}
+
+.title {
+    font-size: 2em;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1em;
+    font-weight: lighter;
+    color: #c8102e
+}
+
+.subheading {
+    font-weight: bold;
+    font-size: 1;
+    margin: 0;
+}

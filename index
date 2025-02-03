@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- METADATA GOES HERE -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA Today</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <!-- CONTENT GOES HERE -->
+
+    <header class="header">
+
+
+        <div class="container mt-5 mb-5">
+            <h1 class="title">NBA Today</h1>
+
+            <p class="subtitle">Tyler Pe Benito - Data Visualization</p>
+        </div>
+
+    </header>
+
+
+    <div class="container mt-3 mb-5">
+        <div class="row">
+
+            <div class="col-xs-12 mb-6">
+
+                <div class="col-12 mb-4">
+                    <h2 class="subheading">Three-Point Attempts Over The Years</h2>
+                </div>
+
+                <p>From the 2004-05 season until today, teams in the NBA have experienced a huge increase in the number
+                    of
+                    three-pointers taken per game. It happened because of an analytics revolution which really proved
+                    three-pointers were far more efficient than shots from mid-range.</p>
+
+                <p>Players like Stephen Curry and Klay Thompson, of the Golden State Warriors have managed to win
+                    championships by shooting triples in high volume. Other rule changes, like calling hand-checking
+                    closer,
+                    have also benefited perimeter shooting. The emphasis on spacing and pace has made the three-point
+                    shot a
+                    fundamental weapon.</p>
+
+                <p>Finally, today's younger players often train from an early age in three-point
+                    shooting, meaning there are big men who can shoot from three. As a result, the league-wide average
+                    of
+                    three-point attempts per game surged-from just 16.8 in 2004-05 to more than 34 in recent seasons.
+                    The
+                    trend continues to shape the modern game with the three-pointer as perhaps the most dominant shot in
+                    today's NBA.</p>
+
+                <div class="centered-content">
+                    <canvas id="Chart1"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                <script>
+                    const ctx = document.getElementById('Chart1');
+
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['2004-05', '2009-10', '2014-15', '2019-20', '2024-25'],
+                            datasets: [{
+                                label: '# Three Point Attempts',
+                                data: [15.8, 18.1, 22.4, 35.1, 37.5,],
+                                borderWidth: 1,
+                                borderColor: '#c8102e',
+                                backgroundColor: 'rgba(29, 66, 138, 0.8)',
+                                fill: true,
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+
+            </div>
+        </div>
+
+        <div class="container mt-3 mb-5">
+
+            <div class="col-12 mb-4">
+                <h2 class="subheading">League Points Per Game Over The Years</h2>
+            </div>
+
+            <p>Over the course of the 2004-05 season, the NBA experienced a great league-wide surge in scoring; namely,
+                points per game rose due to various factors. The average team in 2004-05 scored approximately
+                97.2 points per game. By recent seasons, that number has exceeded 114 PPG, marking a major shift in
+                offensive efficiency.
+            </p>
+
+            <p>Several key reasons explain this trend. The NBA's rule changes, particularly the crackdown on
+                hand-checking and more stringent calls for defensive three-second violations have made it easier
+                for offenses to get easy baskets. Meanwhile, analytics have persuaded teams to take
+                more efficient shots—either three-pointers or attempts near the rim—while reducing inefficient
+                mid-range shots.
+            </p>
+
+            <p>Quickening up the pace of play had also played a part in the scoring boom. Teams now focus on fast
+                possessions, transition offense, and spacing, leading to more scoring opportunities.
+            </p>
+
+            <p>As a result, the NBA has become an offense-first league, with higher PPG averages than in previous
+                decades. With continued innovation in strategy and player development, scoring numbers may continue
+                to rise in the years to come.
+            </p>
+
+
+            <div>
+                <canvas id="myChart2"></canvas>
+            </div>
+
+
+            <script>
+                const ctx2 = document.getElementById('myChart2');
+
+                new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        labels: ['2004-05', '2009-10', '2014-15', '2019-20', '2024-25'],
+                        datasets: [{
+                            label: '# League Points Per Game',
+                            data: [97.2, 100.4, 100, 111.8, 113,],
+                            borderWidth: 1,
+                            borderColor: '#c8102e',
+                            backgroundColor: 'rgba(29, 66, 138, 0.8)',
+                            fill: true,
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: false
+                            }
+                        }
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+
+    <div class="col-12 mt-3 mb-5">
+        <div class="container mt-3 mb-5">
+            <div class="row">
+
+                <div class="col-12 mb-4">
+                    <h2 class="subheading">Field Goal Attempts Over The Years</h2>
+                </div>
+
+                <p>
+                    Since the 2004-05 NBA season, the number of field goal attempts (FGA) per game has seen a steady
+                    increase, reflecting the league's shift toward a faster-paced, high-scoring style of play. In
+                    2004-05, the combined FGA per game for both teams was around 160.7. In recent seasons, that number
+                    has climbed to over 180 FGA per game, marking a significant uptick in shot volume.</p>
+
+                <p>This rise is largely driven by the emphasis on offensive efficiency and pace. The decline of
+                    isolation-heavy offenses and the increase in transition play have led to more possessions per game,
+                    resulting in higher shot attempts. Additionally, the widespread adoption of analytics has encouraged
+                    teams to take quick, high-value shots—particularly three-pointers and shots at the rim—rather than
+                    slowing the game down with mid-range attempts.</p>
+
+                <p>Rule changes, including the enforcement of defensive three-second violations and the reduction of
+                    hand-checking, have also played a role in increasing offensive freedom. With teams prioritizing
+                    spacing, ball movement, and fast breaks, the game has become more fluid and dynamic.</p>
+
+                <p>As a result, the modern NBA is characterized by a higher volume of shot attempts, contributing to
+                    the league-wide surge in scoring. This trend shows no signs of slowing down, as teams continue to
+                    push the boundaries of offensive efficiency and tempo.
+                </p>
+
+                <div>
+                    <canvas id="myChart3"></canvas>
+                </div>
+
+                <script>
+                    const ctx3 = document.getElementById('myChart3');
+
+                    new Chart(ctx3, {
+                        type: 'bar',
+                        data: {
+                            labels: ['2004-05', '2009-10', '2014-15', '2019-20', '2024-25'],
+                            datasets: [{
+                                label: '# Field Goal Attempts (FGA)',
+                                data: [160.7, 163.4, 167.1, 177.6, 180,],
+                                borderWidth: 1,
+                                borderColor: '#c8102e',
+                                backgroundColor: 'rgba(29, 66, 138, 0.8)',
+                                fill: true,
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: false
+                                }
+                            }
+                        }
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
